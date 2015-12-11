@@ -1,0 +1,70 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+::-webkit-input-placeholder {
+   	color: rgb(170,184,194);
+   	font-size: 16px;
+   	line-height: 24px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  	color: rgb(170,184,194);
+   	font-size: 16px;
+   	line-height: 24px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  	color: rgb(170,184,194);
+  	font-size: 16px;
+  	line-height: 24px;
+}
+
+:-ms-input-placeholder {  
+   	color: rgb(170,184,194);
+    font-size: 16px;
+    line-height: 24px;
+}
+.user-form{
+	width: 392px;
+	margin: 50px auto;
+	padding: 20px;
+}
+.text-input{
+	display: block;
+	width: 372px;
+	height: 24px;
+	margin-bottom: 26px;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 10px;
+	color: #666;
+	border: 1px solid rgb(225, 232, 237);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	outline-style: none;
+}
+.text-input:focus{
+	/*border: 1px solid rgb(208,226,224);*/
+	border: 1px solid rgb(250,213,186);
+}
+.confirm-psw{
+	margin-bottom: 0;
+}
+.confirm-area{
+	margin-bottom: 26px;
+}
+.user-form input[type='submit']{
+	height: 44px;
+	width: 392px;
+	font-size: 16px;
+	background: #FAB989;
+	border: none;
+	color: white;
+}
+
+.match-tip{
+	line-height: 30px;
+	color: #E45F39;
+	font-size: 14px;
+	text-indent: 0.5em;
+}

@@ -1,45 +1,40 @@
-<!-- me! -->
-
-<!doctype html>
 <html>
 <head>
-	<title>Validation - page</title>
+	<title>Display Product</title>
+	<style type="text/css">
+		td {font-family: tahoma, arial, verdana; font-size: .875em;}
+	</style>
 </head>
 <body>
-	
-	<!-- to include menu // connect to DB-->
-	<?php include "connectdb.php" ?>
-
-	<!-- get info from table (category) -->
+	<!-- write the code for insertion -->
+	<!-- open a connection to the DB: -->
 	<?php
-		$result = mysql_query( "SELECT * FROM products")
-		 or die ("Insert Error:".mysql_error());
+	session_start();
+	print $_SESSION['username'];
+	$db = "shopdb";
+	$link = mysql_connect("localhost","root","");
+	if (! $link) die ("Couldnt connect to MySQL");
+	mysql_select_db($db , $link) or die("Select DB Error: ".mysql_error());
 
-		 $num_rows = mysql_num_row($result);
-	?>
+	/*select the record to display*/
+	$result = mysql_query("SELECT * FROM plants")
+			  or die("SELECT Error: ".mysql_error());
 
-	<!-- List-->
-	<h2>Products</h2>
-	<ul>
-		<li></li>
-	</ul>
-	
-	<?php
-	if ($num_rows = 0){
-			echo"no products brb!!"
-		}else {
-			while($row = mysql_fetch_array($result)){
-				echo '<li><img src="images/'.$row['images'].'"/><p>'.$row['title']'</p><p>'.$row['price']'</p></li>'
-			}
-		}
+	/*display the results*/
+	print "<ul>";
+
+	while ($row = mysql_fetch_array($result)){
+		print "<li>";
+		print "<a href='displayproduct.php?id=".$row['id']."'><img src='".$row['image']."'></a>";
+		print "<a href='displayproduct.php?id=".$row['id']."'>".$row["title"]."</a>";
+		print "<p>".$row["price"]."</p>";
+		print "</li>";
+	}
+	print "</ul>";
+	/*closeing the database*/
+	mysql_close($link);
 	?>
-	</ul>
-	<!-- absolut path - entire url/ relative path -how to get to file ex.img/imgname.jpg-->
-	<?php
-		mysql_close($link);
-	?>
+	<br>
+
 </body>
-</html>
-
-
-
+</html>	
