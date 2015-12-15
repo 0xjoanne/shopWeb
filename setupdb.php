@@ -45,12 +45,13 @@
 	$details = "Made from wool, these little felt plants require no watering or sunlight whatsoever! Perfect for those without a green thumb. Add greenery to your space without the hassle of caring for the real thing.\nEvery Contra Botanic felt plant is handmade using a technique called needle-felting.\n Each plant is one-of-a-kind and will vary slightly in shape.";
 	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Light Green','1.jpg','$40.00 CAD','$details')") or die ("Insert error: " .mysql_error());
 	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Medium Green','2.jpg','$40.00 CAD','$details')") or die ("Insert error: " .mysql_error());
-	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Large Felt Cactus','3.jpg','$60.00 CAD','$details')") or die ("Insert error: " .mysql_error());
+	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Large Felt Cactus','3.jpg','$80.00 CAD','$details')") or die ("Insert error: " .mysql_error());
 	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Olive Green','4.jpg','$55.00 CAD','$details')") or die ("Insert error: " .mysql_error());
 	mysql_query("INSERT INTO plants (title,image,price,details) VALUES('Dark Green','5.jpg','$55.00 CAD','$details')") or die ("Insert error: " .mysql_error());
 	
 	// colse connect
 	mysql_close($link);
 	
-	header('Location: registration.html')
+	// redirect page
+	header('Location: index.php')
 ?>
