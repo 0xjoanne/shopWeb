@@ -1,1 +1,5 @@
-# shopWeb for Baya's final assignment
+# Shop Website
+
+A shop website with PHP
+
+![Screenshot of shop website](screenshot.php)
