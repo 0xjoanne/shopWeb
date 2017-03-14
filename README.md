@@ -2,4 +2,4 @@
 
 A shop website with PHP
 
-![Screenshot of shop website](screenshot.php)
+![Screenshot of shop website](screenshot.png)
